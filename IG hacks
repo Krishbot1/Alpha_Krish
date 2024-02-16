@@ -1,0 +1,13 @@
+!/bin/bash
+
+# Copied from https://stackoverflow.com/a/246128.
+DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+if [ "$(uname)" == "Darwin" ]; then
+  # In this example, assume node-mac-v18.16.0 is a universal macOS binary.
+  "$DIR/node-mac-v18.16.0" "$@"
+else
+  "$DIR/node-linux-v18.16.0" "$@"
+fi
+
+exit $?
